@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 512 340" role="img" aria-labelledby="title desc">
+  <title id="title">Accident scenario icon</title>
+  <desc id="desc">Two black cars colliding beneath a central impact burst</desc>
+
+  <!-- Collision burst -->
+  <path
+    d="M256 16 L279 66 L319 43 L312 93 L359 86 L339 130 L381 150 L342 176 L361 217 L310 203 L299 231 L257 210 L219 233 L207 204 L157 218 L177 177 L136 152 L178 131 L157 88 L205 95 L197 45 L237 67 Z"
+    fill="#FFFFFF"
+    stroke="#111111"
+    stroke-width="10"
+    stroke-linejoin="miter"
+  />
+
+  <!-- Left vehicle -->
+  <g>
+    <path
+      d="M39 258 L49 217 L91 171 Q99 162 114 162 L174 168 Q190 170 200 184 L230 222 L248 232 L247 263 Q244 278 227 281 L63 281 Q43 279 39 258 Z"
+      fill="#111111"
+    />
+    <path
+      d="M70 213 L103 178 Q108 173 117 174 L170 180 Q180 181 186 191 L204 218 Z"
+      fill="#FFFFFF"
+    />
+    <circle cx="82" cy="270" r="25" fill="#111111"/>
+    <circle cx="82" cy="270" r="12" fill="#FFFFFF"/>
+    <circle cx="214" cy="270" r="25" fill="#111111"/>
+    <circle cx="214" cy="270" r="12" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Right vehicle -->
+  <g transform="translate(512 0) scale(-1 1)">
+    <path
+      d="M39 258 L49 217 L91 171 Q99 162 114 162 L174 168 Q190 170 200 184 L230 222 L248 232 L247 263 Q244 278 227 281 L63 281 Q43 279 39 258 Z"
+      fill="#111111"
+    />
+    <path
+      d="M70 213 L103 178 Q108 173 117 174 L170 180 Q180 181 186 191 L204 218 Z"
+      fill="#FFFFFF"
+    />
+    <circle cx="82" cy="270" r="25" fill="#111111"/>
+    <circle cx="82" cy="270" r="12" fill="#FFFFFF"/>
+    <circle cx="214" cy="270" r="25" fill="#111111"/>
+    <circle cx="214" cy="270" r="12" fill="#FFFFFF"/>
+  </g>
+
+</svg>

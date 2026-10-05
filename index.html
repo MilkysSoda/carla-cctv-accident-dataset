@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CARLA 기반 고정형 CCTV 관점의 교통사고 영상 및 메타데이터 생성 연구">
+  <meta name="theme-color" content="#121212">
+  <meta property="og:title" content="CARLA Fixed CCTV Accident Dataset">
+  <meta property="og:description" content="고정형 CCTV 관점의 교통사고 데이터 생성 절차와 데이터 구조">
+  <meta property="og:image" content="assets/hero.png">
+  <title>CARLA Fixed CCTV Accident Dataset</title>
+  <link rel="icon" href="assets/accident-scenario.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="페이지 처음으로">CARLA CCTV Accident Data</a>
+    <nav aria-label="주요 메뉴">
+      <a href="#overview">연구 개요</a>
+      <a href="#scenarios">시나리오</a>
+      <a href="#workflow">생성 절차</a>
+      <a href="#dataset">데이터 구조</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-image" role="img" aria-label="CARLA 도로 환경과 고정형 CCTV 교통사고 장면"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">RESEARCH DATASET PROJECT</p>
+        <h1 id="hero-title">시뮬레이션 기반 고정형 CCTV 관점의<br>교통사고 데이터 생성</h1>
+        <p class="hero-summary">
+          CARLA Town04 환경에서 세 가지 사고 시나리오를 반복 실행하고, 지면 기준 9 m 높이의
+          고정형 RGB 카메라로 972개 영상과 충돌 메타데이터를 함께 수집했습니다.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-action" href="#workflow">생성 절차 보기</a>
+          <a class="secondary-action" href="#release">공개 상태 확인</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="facts" aria-label="핵심 실험 조건">
+      <div><strong>972개</strong><span>전체 CCTV 영상</span></div>
+      <div><strong>3개</strong><span>구현 사고 시나리오</span></div>
+      <div><strong>444 / 528</strong><span>충돌 / 비충돌 영상</span></div>
+      <div><strong>5.18 GB</strong><span>영상과 메타데이터</span></div>
+    </section>
+
+    <section id="overview" class="section section-split">
+      <div class="section-copy">
+        <p class="section-kicker">OVERVIEW</p>
+        <h2>통제 가능한 조건으로 CCTV 사고 장면을 반복 생성</h2>
+        <p>
+          실제 교통사고 영상은 발생 시점이 불규칙하고 수집과 공개에 제약이 있습니다.
+          본 연구는 CARLA Town04에서 사고 차량의 조합, 주행 조건, 날씨를 설정하고 동일한 절차로
+          고정형 CCTV 영상을 생성하는 방법을 제안합니다.
+        </p>
+        <p>
+          CCTV 영상은 차량 탑재 시점이 아니라 도로 주변의 고정 관찰 시점에서 수집합니다.
+          충돌 센서와 차량 간 거리 조건으로 충돌 여부를 판정하고, 영상 프레임과 이벤트 정보를
+          동기화하여 MP4 영상과 Excel 메타데이터로 저장합니다.
+        </p>
+      </div>
+      <figure class="overview-visual">
+        <img src="assets/road.png" alt="CARLA Town04 도로 환경 조감도">
+        <figcaption>Town04 도로 환경</figcaption>
+      </figure>
+    </section>
+
+    <section id="scenarios" class="section section-muted">
+      <div class="section-heading">
+        <p class="section-kicker">SCENARIOS</p>
+        <h2>구현 사고 시나리오</h2>
+        <p>후방추돌, 교차로 충돌과 동시 차선변경 시나리오를 각각 324회 실행했습니다.</p>
+      </div>
+      <div class="scenario-grid">
+        <article class="scenario-card">
+          <img src="assets/rear.png" alt="CARLA 후방추돌 시나리오의 고정형 CCTV 장면">
+          <div class="scenario-body">
+            <span class="scenario-index">01</span>
+            <h3>후방추돌</h3>
+            <p>동일 차로의 선행 차량이 감속하고 후행 차량이 접근하면서 충돌 상황을 형성합니다.</p>
+          </div>
+        </article>
+        <article class="scenario-card">
+          <img src="assets/intersection.png" alt="CARLA 교차로 충돌 시나리오의 고정형 CCTV 장면">
+          <div class="scenario-body">
+            <span class="scenario-index">02</span>
+            <h3>교차로 충돌</h3>
+            <p>서로 다른 진입 방향의 두 차량이 교차로 내부에서 이동 경로가 중첩되도록 구성합니다.</p>
+          </div>
+        </article>
+        <article class="scenario-card">
+          <img src="assets/lane.png" alt="CARLA 동시 차선변경 시나리오의 고정형 CCTV 장면">
+          <div class="scenario-body">
+            <span class="scenario-index">03</span>
+            <h3>동시 차선변경</h3>
+            <p>서로 다른 차로의 두 차량이 동일한 목표 차로로 진입하며 이동 경로가 중첩됩니다.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="workflow" class="section workflow-section">
+      <div class="section-heading">
+        <p class="section-kicker">WORKFLOW</p>
+        <h2>교통사고 데이터 생성 절차</h2>
+        <p>실험 조건 설정부터 CCTV 영상과 메타데이터 저장까지 동일한 절차를 반복합니다.</p>
+      </div>
+      <figure class="workflow-figure">
+        <img src="assets/generation-workflow.png" alt="CARLA 기반 고정형 CCTV 교통사고 데이터 생성 절차도">
+        <figcaption>CARLA 기반 고정형 CCTV 교통사고 데이터 생성 절차</figcaption>
+      </figure>
+    </section>
+
+    <section id="dataset" class="section section-dark">
+      <div class="section-heading light-heading">
+        <p class="section-kicker">DATA FORMAT</p>
+        <h2>영상과 이벤트 정보를 함께 제공</h2>
+        <p class="data-summary">각 시나리오 324개씩 총 972개 영상과 972행의 통합 Excel 메타데이터로 구성됩니다.</p>
+      </div>
+      <div class="data-columns">
+        <div class="data-column">
+          <h3>CCTV 영상</h3>
+          <dl>
+            <div><dt>파일 형식</dt><dd>MP4</dd></div>
+            <div><dt>해상도</dt><dd>1280×720</dd></div>
+            <div><dt>프레임률</dt><dd>60 FPS</dd></div>
+            <div><dt>관찰 시점</dt><dd>시나리오별 고정형 RGB 카메라</dd></div>
+          </dl>
+        </div>
+        <div class="data-column">
+          <h3>메타데이터</h3>
+          <dl>
+            <div><dt>시나리오</dt><dd>유형, 날씨, 실행 조건</dd></div>
+            <div><dt>차량 정보</dt><dd>차량 모델, 적용 속도, 상대 속도</dd></div>
+            <div><dt>충돌 정보</dt><dd>충돌 여부, 발생 프레임, 발생 시점</dd></div>
+            <div><dt>영상 정보</dt><dd>총 프레임 수, FPS</dd></div>
+          </dl>
+          <a class="schema-link" href="metadata-schema.csv" download>메타데이터 스키마 내려받기</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section modules-section">
+      <div class="section-heading">
+        <p class="section-kicker">IMPLEMENTATION</p>
+        <h2>모듈 구성</h2>
+      </div>
+      <div class="module-list" role="list">
+        <div role="listitem"><code>main.py</code><span>실험 조건과 전체 반복 실행 관리</span></div>
+        <div role="listitem"><code>scenarios.py</code><span>차량 배치, 행동 제어, 충돌 판정</span></div>
+        <div role="listitem"><code>scenario_motion.py</code><span>속도 변화와 차선변경 제어</span></div>
+        <div role="listitem"><code>traffic_add.py</code><span>주변 교통류 생성과 정리</span></div>
+        <div role="listitem"><code>videodownload_module_system.py</code><span>CCTV 프레임 수집, 영상 및 메타데이터 저장</span></div>
+      </div>
+    </section>
+
+    <section id="release" class="section release-section">
+      <div>
+        <p class="section-kicker">RELEASE STATUS</p>
+        <h2>데이터셋 업로드 준비 중</h2>
+        <p>
+          972개 영상과 통합 메타데이터를 확인했습니다. 영상은 시나리오별 GitHub Release
+          파일로 분할하고, 코드와 웹페이지는 저장소에서 관리할 예정입니다.
+        </p>
+      </div>
+      <div class="release-table" aria-label="공개 항목 상태">
+        <div><span>생성 코드</span><strong>정리 중</strong></div>
+        <div><span>영상 데이터</span><strong>972개 확인</strong></div>
+        <div><span>메타데이터</span><strong>972행 확인</strong></div>
+        <div><span>논문 인용 정보</span><strong>추후 공개</strong></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>CARLA Fixed CCTV Accident Data</strong>
+    <span>Simulation-based traffic accident data generation from fixed CCTV perspectives</span>
+  </footer>
+</body>
+</html>

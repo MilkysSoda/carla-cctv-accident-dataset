@@ -1,0 +1,28 @@
+category,field,description
+scenario,scenario_name,사고 시나리오 유형
+scenario,weather,시나리오에 적용한 날씨 조건
+vehicle,vehicle_a_model,차량 A의 CARLA 모델명
+vehicle,vehicle_b_model,차량 B의 CARLA 모델명
+vehicle,vehicle_a_speed_kmh,차량 A 적용 속도
+vehicle,vehicle_b_speed_kmh,차량 B 적용 속도
+vehicle,relative_speed_kmh,두 차량의 상대 속도
+collision,is_collision,충돌 발생 여부
+collision,collision_frame,영상 기준 충돌 발생 프레임
+collision,collision_source,충돌 센서 또는 거리 기반 판정 정보
+video,total_frames,저장된 영상의 총 프레임 수
+video,fps,영상 프레임률
+scenario,ego_spawn,차량 A 스폰 지점
+scenario,adv_spawn,차량 B 스폰 지점
+rear_end,initial_vehicle_gap_m,후방추돌 초기 차량 간격
+rear_end,lead_vehicle_target_speed_kmh,선행차 감속 후 목표 속도
+rear_end,lead_vehicle_deceleration_sec,선행차 목표 감속 시간
+scenario,simulation_time_sec,시뮬레이션 실행 시간
+randomization,vehicle_a_reference_speed_kmh,차량 A 기준 속도
+randomization,vehicle_b_reference_speed_kmh,차량 B 기준 속도
+randomization,speed_randomization_enabled,속도 무작위화 적용 여부
+randomization,speed_randomization_range_percent,속도 무작위화 범위
+randomization,speed_random_seed,속도 무작위화 시드
+lane_change,target_lane,목표 차선
+lane_change,lane_change_start_sec,기준 차선변경 시작 시점
+lane_change,ego_lane_change_start_sec,차량 A 차선변경 시작 시점
+lane_change,adv_lane_change_start_sec,차량 B 차선변경 시작 시점
