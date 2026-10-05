@@ -7,7 +7,8 @@
 - `index.html`: 프로젝트 소개 페이지
 - `styles.css`: 반응형 화면 스타일
 - `assets/`: CARLA 장면과 데이터 생성 절차 이미지
-- `metadata-schema.csv`: 공개 예정 메타데이터 구조
+- `metadata-schema.csv`: 공개 메타데이터 구조
+- `tests/`: 시뮬레이션과 영상 메타데이터 단위 테스트
 
 ## 연구 범위
 
@@ -61,7 +62,7 @@
 게시 후 주소는 일반적으로 다음 형식입니다.
 
 ```text
-https://GITHUB-USERNAME.github.io/carla-cctv-accident-dataset/
+https://milkyssoda.github.io/carla-cctv-accident-dataset/
 ```
 
 GitHub 공식 문서: [Creating a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site), [Configuring a publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
@@ -75,4 +76,4 @@ GitHub 공식 문서: [Creating a GitHub Pages site](https://docs.github.com/en/
 
 ## 공개 상태
 
-현재 영상과 메타데이터 검증 및 Release 배포 파일 생성을 완료했으며, 코드를 정리하고 있습니다.
+영상 972개와 메타데이터 972행을 포함한 [Dataset v1.0.0](https://github.com/MilkysSoda/carla-cctv-accident-dataset/releases/tag/v1.0.0)을 공개했습니다. 생성 코드와 테스트도 저장소에서 제공합니다.
