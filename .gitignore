@@ -3,3 +3,5 @@ release-packages/
 *.7z
 *.mp4
 *.xlsx
+__pycache__/
+*.py[cod]
